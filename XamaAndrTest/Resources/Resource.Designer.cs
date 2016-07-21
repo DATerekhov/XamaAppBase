@@ -93,6 +93,9 @@ namespace XamaAndrTest
 			// aapt resource value: 0x7f06000d
 			public const int bStartExercise = 2131099661;
 			
+			// aapt resource value: 0x7f060008
+			public const int chronometer = 2131099656;
+			
 			// aapt resource value: 0x7f06001f
 			public const int clock = 2131099679;
 			
@@ -185,9 +188,6 @@ namespace XamaAndrTest
 			
 			// aapt resource value: 0x7f060021
 			public const int tvStatusValue = 2131099681;
-			
-			// aapt resource value: 0x7f060008
-			public const int tvTimer = 2131099656;
 			
 			// aapt resource value: 0x7f060028
 			public const int videoView1 = 2131099688;

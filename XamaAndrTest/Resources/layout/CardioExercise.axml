@@ -72,12 +72,12 @@
                 android:layout_height="match_parent"
                 android:id="@+id/tlCardioParams" />
         </ScrollView>
-        <TextView
+        <Chronometer
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/tvTimer"
-            android:foregroundGravity="center"
+            android:id="@+id/chronometer"
             android:gravity="center"
-            android:layout_margin="10dp" />
+            android:textSize="20dp"
+            android:textColor="@android:color/background_light" />
     </LinearLayout>
 </LinearLayout>

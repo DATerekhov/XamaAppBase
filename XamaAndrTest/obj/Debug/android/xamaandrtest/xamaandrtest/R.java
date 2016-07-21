@@ -25,6 +25,7 @@ public final class R {
         public static final int bNextActivityTemp=0x7f06001a;
         public static final int bSkip=0x7f06000f;
         public static final int bStartExercise=0x7f06000d;
+        public static final int chronometer=0x7f060008;
         public static final int clock=0x7f06001f;
         public static final int downloads=0x7f06002a;
         public static final int etLogin=0x7f060016;
@@ -56,7 +57,6 @@ public final class R {
         public static final int tvPassword=0x7f060017;
         public static final int tvStatus=0x7f060020;
         public static final int tvStatusValue=0x7f060021;
-        public static final int tvTimer=0x7f060008;
         public static final int videoView1=0x7f060028;
         public static final int vvExerciseVideo=0x7f06000c;
     }
