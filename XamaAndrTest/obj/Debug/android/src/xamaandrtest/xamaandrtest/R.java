@@ -18,6 +18,7 @@ public final class R {
     public static final class id {
         public static final int bCardioBegin=0x7f060003;
         public static final int bCardioPause=0x7f060004;
+        public static final int bCardioSkip=0x7f060009;
         public static final int bCardioStop=0x7f060005;
         public static final int bGoToMenuActivity=0x7f060015;
         public static final int bLogin=0x7f06001a;
@@ -25,7 +26,7 @@ public final class R {
         public static final int bNextActivityTemp=0x7f06001b;
         public static final int bSkip=0x7f060010;
         public static final int bStartExercise=0x7f06000e;
-        public static final int chronometer=0x7f060009;
+        public static final int chronometer=0x7f060008;
         public static final int clock=0x7f060020;
         public static final int downloads=0x7f06002b;
         public static final int etLogin=0x7f060017;
@@ -57,7 +58,6 @@ public final class R {
         public static final int tvPassword=0x7f060018;
         public static final int tvStatus=0x7f060021;
         public static final int tvStatusValue=0x7f060022;
-        public static final int tvTimer=0x7f060008;
         public static final int videoView1=0x7f060029;
         public static final int vvExerciseVideo=0x7f06000d;
     }

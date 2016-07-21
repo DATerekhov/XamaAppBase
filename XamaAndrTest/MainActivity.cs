@@ -36,7 +36,6 @@ namespace XamaAndrTest
             {
                 if ((user.Login == etLogin.Text.ToString()) && (user.Password == etPassword.Text.ToString()))
                 {
-                    Toast.MakeText(this, "Nice Login!", ToastLength.Short).Show();
                     Intent intern = new Intent(this, typeof(MenuActivity));
                     StartActivity(intern);
                 }

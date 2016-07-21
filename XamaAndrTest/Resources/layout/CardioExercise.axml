@@ -78,6 +78,13 @@
             android:id="@+id/chronometer"
             android:gravity="center"
             android:textSize="20dp"
-            android:textColor="@android:color/background_light" />
+            android:textColor="@android:color/background_light"
+            android:layout_margin="10dp" />
+        <Button
+            android:text="debugSkip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bCardioSkip"
+            android:layout_margin="10dp" />
     </LinearLayout>
 </LinearLayout>

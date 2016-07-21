@@ -72,83 +72,86 @@ namespace XamaAndrTest
 			// aapt resource value: 0x7f060004
 			public const int bCardioPause = 2131099652;
 			
+			// aapt resource value: 0x7f060009
+			public const int bCardioSkip = 2131099657;
+			
 			// aapt resource value: 0x7f060005
 			public const int bCardioStop = 2131099653;
 			
-			// aapt resource value: 0x7f060014
-			public const int bGoToMenuActivity = 2131099668;
-			
-			// aapt resource value: 0x7f060019
-			public const int bLogin = 2131099673;
-			
-			// aapt resource value: 0x7f060027
-			public const int bNext = 2131099687;
+			// aapt resource value: 0x7f060015
+			public const int bGoToMenuActivity = 2131099669;
 			
 			// aapt resource value: 0x7f06001a
-			public const int bNextActivityTemp = 2131099674;
+			public const int bLogin = 2131099674;
 			
-			// aapt resource value: 0x7f06000f
-			public const int bSkip = 2131099663;
+			// aapt resource value: 0x7f060028
+			public const int bNext = 2131099688;
 			
-			// aapt resource value: 0x7f06000d
-			public const int bStartExercise = 2131099661;
+			// aapt resource value: 0x7f06001b
+			public const int bNextActivityTemp = 2131099675;
+			
+			// aapt resource value: 0x7f060010
+			public const int bSkip = 2131099664;
+			
+			// aapt resource value: 0x7f06000e
+			public const int bStartExercise = 2131099662;
 			
 			// aapt resource value: 0x7f060008
 			public const int chronometer = 2131099656;
 			
-			// aapt resource value: 0x7f06001f
-			public const int clock = 2131099679;
+			// aapt resource value: 0x7f060020
+			public const int clock = 2131099680;
 			
-			// aapt resource value: 0x7f06002a
-			public const int downloads = 2131099690;
+			// aapt resource value: 0x7f06002b
+			public const int downloads = 2131099691;
 			
-			// aapt resource value: 0x7f060016
-			public const int etLogin = 2131099670;
+			// aapt resource value: 0x7f060017
+			public const int etLogin = 2131099671;
 			
-			// aapt resource value: 0x7f060018
-			public const int etPassword = 2131099672;
-			
-			// aapt resource value: 0x7f060022
-			public const int exerciseList = 2131099682;
+			// aapt resource value: 0x7f060019
+			public const int etPassword = 2131099673;
 			
 			// aapt resource value: 0x7f060023
-			public const int leftListView = 2131099683;
+			public const int exerciseList = 2131099683;
+			
+			// aapt resource value: 0x7f060024
+			public const int leftListView = 2131099684;
 			
 			// aapt resource value: 0x7f060000
 			public const int linearLayout1 = 2131099648;
 			
-			// aapt resource value: 0x7f06001e
-			public const int llHorizontal = 2131099678;
+			// aapt resource value: 0x7f06001f
+			public const int llHorizontal = 2131099679;
+			
+			// aapt resource value: 0x7f06001d
+			public const int llVertical = 2131099677;
+			
+			// aapt resource value: 0x7f060012
+			public const int lvMark = 2131099666;
 			
 			// aapt resource value: 0x7f06001c
-			public const int llVertical = 2131099676;
+			public const int myDrawer = 2131099676;
 			
-			// aapt resource value: 0x7f060011
-			public const int lvMark = 2131099665;
-			
-			// aapt resource value: 0x7f06001b
-			public const int myDrawer = 2131099675;
-			
-			// aapt resource value: 0x7f06000e
-			public const int progressBar1 = 2131099662;
+			// aapt resource value: 0x7f06000f
+			public const int progressBar1 = 2131099663;
 			
 			// aapt resource value: 0x7f060002
 			public const int relativeLayout1 = 2131099650;
 			
-			// aapt resource value: 0x7f060024
-			public const int rightListView = 2131099684;
+			// aapt resource value: 0x7f060025
+			public const int rightListView = 2131099685;
 			
 			// aapt resource value: 0x7f060006
 			public const int scrollView1 = 2131099654;
 			
-			// aapt resource value: 0x7f060025
-			public const int scrollView2 = 2131099685;
+			// aapt resource value: 0x7f060026
+			public const int scrollView2 = 2131099686;
 			
-			// aapt resource value: 0x7f060012
-			public const int svExerciseMarks = 2131099666;
+			// aapt resource value: 0x7f060013
+			public const int svExerciseMarks = 2131099667;
 			
-			// aapt resource value: 0x7f06000a
-			public const int svParameters = 2131099658;
+			// aapt resource value: 0x7f06000b
+			public const int svParameters = 2131099659;
 			
 			// aapt resource value: 0x7f060001
 			public const int textView1 = 2131099649;
@@ -156,44 +159,44 @@ namespace XamaAndrTest
 			// aapt resource value: 0x7f060007
 			public const int tlCardioParams = 2131099655;
 			
-			// aapt resource value: 0x7f060013
-			public const int tlMarkParams = 2131099667;
-			
-			// aapt resource value: 0x7f06000b
-			public const int tlParameters = 2131099659;
-			
-			// aapt resource value: 0x7f060029
-			public const int tlPrepareParam = 2131099689;
-			
-			// aapt resource value: 0x7f060026
-			public const int tvExerciseTitle = 2131099686;
-			
-			// aapt resource value: 0x7f060009
-			public const int tvExirciseName = 2131099657;
-			
-			// aapt resource value: 0x7f060015
-			public const int tvLogin = 2131099669;
-			
-			// aapt resource value: 0x7f060010
-			public const int tvMarkTitle = 2131099664;
-			
-			// aapt resource value: 0x7f06001d
-			public const int tvOccupTitle = 2131099677;
-			
-			// aapt resource value: 0x7f060017
-			public const int tvPassword = 2131099671;
-			
-			// aapt resource value: 0x7f060020
-			public const int tvStatus = 2131099680;
-			
-			// aapt resource value: 0x7f060021
-			public const int tvStatusValue = 2131099681;
-			
-			// aapt resource value: 0x7f060028
-			public const int videoView1 = 2131099688;
+			// aapt resource value: 0x7f060014
+			public const int tlMarkParams = 2131099668;
 			
 			// aapt resource value: 0x7f06000c
-			public const int vvExerciseVideo = 2131099660;
+			public const int tlParameters = 2131099660;
+			
+			// aapt resource value: 0x7f06002a
+			public const int tlPrepareParam = 2131099690;
+			
+			// aapt resource value: 0x7f060027
+			public const int tvExerciseTitle = 2131099687;
+			
+			// aapt resource value: 0x7f06000a
+			public const int tvExirciseName = 2131099658;
+			
+			// aapt resource value: 0x7f060016
+			public const int tvLogin = 2131099670;
+			
+			// aapt resource value: 0x7f060011
+			public const int tvMarkTitle = 2131099665;
+			
+			// aapt resource value: 0x7f06001e
+			public const int tvOccupTitle = 2131099678;
+			
+			// aapt resource value: 0x7f060018
+			public const int tvPassword = 2131099672;
+			
+			// aapt resource value: 0x7f060021
+			public const int tvStatus = 2131099681;
+			
+			// aapt resource value: 0x7f060022
+			public const int tvStatusValue = 2131099682;
+			
+			// aapt resource value: 0x7f060029
+			public const int videoView1 = 2131099689;
+			
+			// aapt resource value: 0x7f06000d
+			public const int vvExerciseVideo = 2131099661;
 			
 			static Id()
 			{

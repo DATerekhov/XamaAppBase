@@ -20,7 +20,7 @@ namespace XamaAndrTest
         private Button bCardioBegin;
         private Button bCardioPause;
         private Button bCardioStop;
-        private TextView tvTimer;
+        private Button bCardioSkip;
         private Chronometer chrono;
         private long lastPause;
 
@@ -33,8 +33,8 @@ namespace XamaAndrTest
             bCardioPause = FindViewById<Button>(Resource.Id.bCardioPause);
             bCardioStop = FindViewById<Button>(Resource.Id.bCardioStop);
             tlCardioParam = FindViewById<TableLayout>(Resource.Id.tlCardioParams);
-            tvTimer = FindViewById<TextView>(Resource.Id.tvTimer);
             chrono = FindViewById<Chronometer>(Resource.Id.chronometer);
+            bCardioSkip = FindViewById<Button>(Resource.Id.bCardioSkip);
 
             //выгрузка параметров в таблицу
             for (var i = 0; i < 2; i++)
@@ -57,23 +57,42 @@ namespace XamaAndrTest
             bCardioBegin.Click += BCardioBegin_Click;
             bCardioPause.Click += BCardioPause_Click;
             bCardioStop.Click += BCardioStop_Click;
+            bCardioSkip.Click += BCardioSkip_Click;
+        }
+
+        private void BCardioSkip_Click(object sender, EventArgs e)
+        {
+            Intent intent = new Intent(this, typeof(ExerciseMarkActivity));
+            StartActivity(intent);
         }
 
         private void BCardioStop_Click(object sender, EventArgs e)
         {
-            chrono.Base = chrono.Base + SystemClock.ElapsedRealtime() - lastPause;
-            chrono.Start();
+            chrono.Stop();
         }
 
         private void BCardioPause_Click(object sender, EventArgs e)
-        {
-            lastPause = SystemClock.ElapsedRealtime();
-            chrono.Stop();
+        {   
+            if (chrono.Enabled)
+            {
+                lastPause = SystemClock.ElapsedRealtime();
+                chrono.Stop();
+                chrono.Enabled = false;
+                bCardioPause.Text = "Play";
+            }
+            else
+            {
+                chrono.Base = chrono.Base + SystemClock.ElapsedRealtime() - lastPause;
+                chrono.Start();
+                chrono.Enabled = true;
+                bCardioPause.Text = "Pause";
+            }
         }
 
         private void BCardioBegin_Click(object sender, EventArgs e)
         {
             chrono.Base = SystemClock.ElapsedRealtime();
+            chrono.Enabled = true;
             chrono.Start();
             
             bCardioBegin.Visibility = ViewStates.Invisible;
