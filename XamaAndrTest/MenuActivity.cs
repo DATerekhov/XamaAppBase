@@ -78,7 +78,7 @@ namespace XamaAndrTest
 
             mLeftItems.Add("First Left Item");
             mLeftItems.Add("Second Left Item");
-
+            
             mRightItems.Add("First Right Item");
             mRightItems.Add("Second Right Item");
 

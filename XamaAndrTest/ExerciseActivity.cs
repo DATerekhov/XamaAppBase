@@ -59,7 +59,6 @@ namespace XamaAndrTest
 
         private void LaunchVideo()
         {
-            //do the guys in this video look familiar?
             string videoUri = "http://bitly.com/1MC3Gig";
             vvExerciseVideo.SetVideoURI(Android.Net.Uri.Parse(videoUri));
             vvExerciseVideo.Start();
@@ -68,8 +67,6 @@ namespace XamaAndrTest
         private void OnVideoPlayerPrepared(object sender, EventArgs e)
         {
             mediaController.SetAnchorView(vvExerciseVideo);
-
-            //show media controls for 3 seconds when video starts to play
             mediaController.Show(3000);
         }
 

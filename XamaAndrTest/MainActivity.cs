@@ -27,6 +27,7 @@ namespace XamaAndrTest
         private Button bNextTest;
         private EditText etLogin;
         private EditText etPassword;
+
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
@@ -120,7 +121,7 @@ namespace XamaAndrTest
             string result = testWcfDimon.CheckLogPass(user);
             if (result.Equals("ќшибка авторизации"))
             {
-                Toast.MakeText(this, "≈бать ты кек!", ToastLength.Short).Show();
+                Toast.MakeText(this, "Error(", ToastLength.Short).Show();
             }
             else
             {

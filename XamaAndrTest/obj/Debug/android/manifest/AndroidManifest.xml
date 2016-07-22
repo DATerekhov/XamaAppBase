@@ -5,17 +5,17 @@
   <uses-permission android:name="android.permission.INTERNET" />
   <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
   <application android:label="XamaAndrTest" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true">
-    <activity android:label="CardioExerciseActivity" android:name="md5e80443fa878603b8bd8456b487737989.CardioExerciseActivity" />
-    <activity android:label="ExerciseActivity" android:name="md5e80443fa878603b8bd8456b487737989.ExerciseActivity" />
-    <activity android:label="ExerciseMarkActivity" android:name="md5e80443fa878603b8bd8456b487737989.ExerciseMarkActivity" />
-    <activity android:icon="@drawable/icon" android:label="MainActivity" android:name="md5e80443fa878603b8bd8456b487737989.MainActivity">
+    <activity android:label="CardioExerciseActivity" android:name="md56c8e8a01f1c1a65381dc03feb0af8356.CardioExerciseActivity" />
+    <activity android:label="ExerciseActivity" android:name="md56c8e8a01f1c1a65381dc03feb0af8356.ExerciseActivity" />
+    <activity android:label="ExerciseMarkActivity" android:name="md56c8e8a01f1c1a65381dc03feb0af8356.ExerciseMarkActivity" />
+    <activity android:icon="@drawable/icon" android:label="MainActivity" android:name="md56c8e8a01f1c1a65381dc03feb0af8356.MainActivity">
       <intent-filter>
         <action android:name="android.intent.action.MAIN" />
         <category android:name="android.intent.category.LAUNCHER" />
       </intent-filter>
     </activity>
-    <activity android:label="MenuActivity" android:name="md5e80443fa878603b8bd8456b487737989.MenuActivity" />
-    <activity android:label="PrepareActivity" android:name="md5e80443fa878603b8bd8456b487737989.PrepareActivity" />
+    <activity android:label="MenuActivity" android:name="md56c8e8a01f1c1a65381dc03feb0af8356.MenuActivity" />
+    <activity android:label="PrepareActivity" android:name="md56c8e8a01f1c1a65381dc03feb0af8356.PrepareActivity" />
     <provider android:name="mono.MonoRuntimeProvider" android:exported="false" android:initOrder="2147483647" android:authorities="XamaAndrTest.XamaAndrTest.mono.MonoRuntimeProvider.__mono_init__" />
     <!--suppress ExportedReceiver-->
     <receiver android:name="mono.android.Seppuku">

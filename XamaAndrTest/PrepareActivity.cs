@@ -31,6 +31,7 @@ namespace XamaAndrTest
             bnext = FindViewById<Button>(Resource.Id.bNext);
             videoView = FindViewById<VideoView>(Resource.Id.videoView1);
             tlPrepareParam = FindViewById<TableLayout>(Resource.Id.tlPrepareParam);
+
             mediaController = new MediaController(this, true);
             videoView.SetMediaController(mediaController); 
 

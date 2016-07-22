@@ -6,7 +6,7 @@
   <AndroidSdkBuildToolsPath>C:\Users\Dmitry Terekhov\AppData\Local\Xamarin\MonoForAndroid\AndroidSDK\build-tools\23.0.3</AndroidSdkBuildToolsPath>
   <AndroidSdkBuildToolsBinPath>C:\Users\Dmitry Terekhov\AppData\Local\Xamarin\MonoForAndroid\AndroidSDK\build-tools\23.0.3</AndroidSdkBuildToolsBinPath>
   <AndroidSdkPath>C:\Users\Dmitry Terekhov\AppData\Local\Xamarin\MonoForAndroid\AndroidSDK</AndroidSdkPath>
-  <JavaSdkPath>C:\Program Files (x86)\Java\jdk1.7.0_71</JavaSdkPath>
+  <JavaSdkPath>C:\Program Files (x86)\Java\jdk1.8.0_92</JavaSdkPath>
   <MonoAndroidBinPath>C:\Program Files (x86)\MSBuild\Xamarin\Android</MonoAndroidBinPath>
   <MonoAndroidToolsPath>C:\Program Files (x86)\MSBuild\Xamarin\Android</MonoAndroidToolsPath>
   <ReferenceAssemblyPaths>
