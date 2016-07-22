@@ -16,42 +16,23 @@ using Android.Media;
 namespace XamaAndrTest
 {
     [Activity(Label = "PrepareActivity")]
-    public class PrepareActivity : Activity, MediaPlayer.IOnPreparedListener, ISurfaceHolderCallback
+    public class PrepareActivity : Activity
     {
         private Button bnext;
         private VideoView videoView;
-        private MediaPlayer mediaPlayer;
         private TableLayout tlPrepareParam;
+        private MediaController mediaController;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Prepare);
+
             bnext = FindViewById<Button>(Resource.Id.bNext);
             videoView = FindViewById<VideoView>(Resource.Id.videoView1);
             tlPrepareParam = FindViewById<TableLayout>(Resource.Id.tlPrepareParam);
-
-            /* 
-            string pathLocal = "Assets/sport.mp4";
-            videoView.SetVideoURI(Android.Net.Uri.Parse(pathLocal));
-            videoView.SetMediaController(new MediaController(this));
-            videoView.RequestFocus();
-            videoView.Start();
-            videoView.KeepScreenOn = true;
-            */
-
-            ISurfaceHolder holder = videoView.Holder;
-            holder.SetType(SurfaceType.PushBuffers);
-            holder.AddCallback(this);
-
-            mediaPlayer = new MediaPlayer();
-            Android.Content.Res.AssetFileDescriptor afd = Assets.OpenFd("sport.mp4");
-            if (afd != null)
-            {
-                mediaPlayer.SetDataSource(afd.FileDescriptor, afd.StartOffset, afd.Length);
-                mediaPlayer.Prepare();
-                mediaPlayer.Start();
-            }
+            mediaController = new MediaController(this, true);
+            videoView.SetMediaController(mediaController); 
 
             bnext.Click += delegate
             {
@@ -75,23 +56,25 @@ namespace XamaAndrTest
             }
 
         }
+       
+        protected override void OnStart()
+        {
+            base.OnStart();
+            videoView.Prepared += VideoView_Prepared;
+            LaunchVideo();
+        }
 
-        public void SurfaceCreated(ISurfaceHolder holder)
+        private void VideoView_Prepared(object sender, EventArgs e)
         {
-            Toast.MakeText(this, "SurfaceCreated", ToastLength.Short).Show();
-            mediaPlayer.SetDisplay(holder);
+            mediaController.SetAnchorView(videoView);
+            mediaController.Show(3000);
         }
-        public void SurfaceDestroyed(ISurfaceHolder holder)
+
+        private void LaunchVideo()
         {
-            Console.WriteLine("SurfaceDestroyed");
-        }
-        public void SurfaceChanged(ISurfaceHolder holder, Android.Graphics.Format format, int w, int h)
-        {
-            Console.WriteLine("SurfaceChanged");
-        }
-        public void OnPrepared(MediaPlayer player)
-        {
-            
+            string videoUrl = "http://bitly.com/1MC3Gig";
+            videoView.SetVideoURI(Android.Net.Uri.Parse(videoUrl));
+            videoView.Start();
         }
     }
 }

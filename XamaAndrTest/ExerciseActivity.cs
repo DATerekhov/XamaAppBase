@@ -15,12 +15,12 @@ namespace XamaAndrTest
     [Activity(Label = "ExerciseActivity")]
     public class ExerciseActivity : Activity
     {
-        //private TextView tvExerciseName;
-        // private ScrollView svParameters;
+        private TextView tvExerciseName;
+        private ScrollView svParameters;
         private TableLayout tlParameters;
         private VideoView vvExerciseVideo;
-        //private Button bStartExercise;
-        //private ProgressBar pbExerciseProgress;
+        private Button bStartExercise;
+        private ProgressBar pbExerciseProgress;
 
         private Button bSkip;
 
