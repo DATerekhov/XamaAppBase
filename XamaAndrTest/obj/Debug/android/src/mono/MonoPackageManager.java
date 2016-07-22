@@ -100,6 +100,10 @@ class MonoPackageManager_Resources {
 		/* We need to ensure that "XamaAndrTest.dll" comes first in this list. */
 		"XamaAndrTest.dll",
 		"Java.Interop.dll",
+		"MongoDB.Bson.dll",
+		"MongoDB.Driver.Core.dll",
+		"MongoDB.Driver.dll",
+		"Newtonsoft.Json.dll",
 		"Xamarin.Android.Support.v13.dll",
 		"Xamarin.Android.Support.v4.dll",
 		"System.Threading.dll",

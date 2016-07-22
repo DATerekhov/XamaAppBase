@@ -2,13 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
+using MongoDB.Bson;
 
 namespace XamaAndrTest.Objects
 {
@@ -38,7 +32,7 @@ namespace XamaAndrTest.Objects
             }
         }
 
-        public Trainer(string login, string password, string role, string fio, object foto, string contacts, string _information) : base(login, password, role, fio, foto, contacts)
+        public Trainer(ObjectId id, string login, string password, string role, string fio, object foto, string contacts, string _information) : base(id, login, password, role, fio, foto, contacts)
         {
             this._information = _information;
             _clients = new List<Client>();

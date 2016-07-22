@@ -15,12 +15,13 @@ namespace XamaAndrTest
     [Activity(Label = "ExerciseActivity")]
     public class ExerciseActivity : Activity
     {
-        private TextView tvExerciseName;
-        private ScrollView svParameters;
+        //private TextView tvExerciseName;
+        // private ScrollView svParameters;
         private TableLayout tlParameters;
         private VideoView vvExerciseVideo;
-        private Button bStartExercise;
-        private ProgressBar pbExerciseProgress;
+        private MediaController mediaController;
+        //private Button bStartExercise;
+        //private ProgressBar pbExerciseProgress;
 
         private Button bSkip;
 
@@ -30,10 +31,10 @@ namespace XamaAndrTest
             SetContentView(Resource.Layout.Exercise);
 
             tlParameters = FindViewById<TableLayout>(Resource.Id.tlParameters);
+
             vvExerciseVideo = FindViewById<VideoView>(Resource.Id.vvExerciseVideo);
-            vvExerciseVideo.SetVideoURI(Android.Net.Uri.Parse("https://www.youtube.com/watch?v=np0HVaZKDv0"));
-            vvExerciseVideo.SetMediaController(new MediaController(this));
-            vvExerciseVideo.RequestFocus();
+            mediaController = new MediaController(this, true);
+            vvExerciseVideo.SetMediaController(mediaController);
 
             bSkip = FindViewById<Button>(Resource.Id.bSkip);
             bSkip.Click += delegate
@@ -42,5 +43,35 @@ namespace XamaAndrTest
                 StartActivity(intent);
             };
         }
+
+        protected override void OnStart()
+        {
+            base.OnStart();
+            vvExerciseVideo.Prepared += OnVideoPlayerPrepared;
+            LaunchVideo();
+        }
+
+        protected override void OnStop()
+        {
+            base.OnStop();
+            vvExerciseVideo.Prepared -= OnVideoPlayerPrepared;
+        }
+
+        private void LaunchVideo()
+        {
+            //do the guys in this video look familiar?
+            string videoUri = "http://bitly.com/1MC3Gig";
+            vvExerciseVideo.SetVideoURI(Android.Net.Uri.Parse(videoUri));
+            vvExerciseVideo.Start();
+        }
+
+        private void OnVideoPlayerPrepared(object sender, EventArgs e)
+        {
+            mediaController.SetAnchorView(vvExerciseVideo);
+
+            //show media controls for 3 seconds when video starts to play
+            mediaController.Show(3000);
+        }
+
     }
 }

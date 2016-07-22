@@ -2,13 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
+using MongoDB.Bson;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
 namespace XamaAndrTest.Objects
 {
@@ -19,13 +15,17 @@ namespace XamaAndrTest.Objects
         private List<Trainer> _trainers;
         private String _presenseStatus;
 
-        public Client(string login, string password, string role, string fio, object foto, string contacts, int growth, Weight weight, string presenseStatus) : base(login, password, role, fio, foto, contacts)
+        public Client(ObjectId id, string login, string password, string role, string fio, object foto, string contacts, int growth, Weight weight, string presenseStatus) : base(id, login, password, role, fio, foto, contacts)
         {
             _growth = growth;
             _weights = new List<Weight>();
             _weights.Add(weight);
             _trainers = new List<Trainer>();
             _presenseStatus = presenseStatus;
+        }
+
+        public Client()
+        {
         }
 
         public int Growth
@@ -60,6 +60,11 @@ namespace XamaAndrTest.Objects
             {
                 return _trainers;
             }
+
+            set
+            {
+                _trainers = value;
+            }
         }
 
         public string PresenseStatus
@@ -80,14 +85,39 @@ namespace XamaAndrTest.Objects
             return _trainers[_trainers.Count - 1];
         }
 
-        public void SetTrainer(Trainer trainer)
+        public static explicit operator Client(BsonDocument user)
         {
-            _trainers.Add(trainer);
+            Client result = new Client();
+            result.ID = user["_id"].AsObjectId;
+            result.Login = user["login"].AsString;
+            result.Password = user["password"].AsString;
+            result.Fio = user["fio"].AsString;
+            result.Role = user["role"].AsString;
+            result.Contacts = user["contacts"].AsString;
+            result.Foto = null;
+            result.Growth = user["growth"].AsInt32;
+            result.PresenseStatus = user["status"].AsString;
+            result.Trainers = new List<Trainer>();
+            result.Weights = new List<Weight>();
+            return result;
         }
 
-        public void SetWeight(Weight weight)
+
+
+        public static implicit operator string(Client client)
         {
-            _weights.Add(weight);
+            string result = JsonConvert.SerializeObject(client);
+            return result;
         }
+
+
+        public static implicit operator Client(string json)
+        {
+            Client result = new Client();
+            result = JsonConvert.DeserializeObject<Client>(json);
+            return result;
+        }
+
+
     }
 }

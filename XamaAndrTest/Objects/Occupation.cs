@@ -2,31 +2,29 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using MongoDB.Bson;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 
 namespace XamaAndrTest.Objects
 {
     public class Occupation
     {
-        private Client _client;
-        private Trainer _trainer;
+        private ObjectId _id;
+        private ObjectId _client;
+        private ObjectId _trainer;
         private DateTime _date;
         private TimeSpan _occupationStart;
         private TimeSpan _occupationEnd;
         private String _status;
         private String _purpose;
-        private List<OccupationExercise> _exercises;
+        private List<ObjectId> _exercises;
         private String _mark;
         private Double _calorificValue;
         private Double _estimatedExecutionPlan;
 
-        public Occupation(Client _client, Trainer _trainer, DateTime _date, TimeSpan _occupationStart, TimeSpan _occupationEnd, string _status, string _purpose, List<OccupationExercise> _exercises, string _mark, double _calorificValue, double _estimatedExecutionPlan)
+        public Occupation(ObjectId _id, ObjectId _client, ObjectId _trainer, DateTime _date, TimeSpan _occupationStart, TimeSpan _occupationEnd, string _status, string _purpose, List<ObjectId> _exercises, string _mark, double _calorificValue, double _estimatedExecutionPlan)
         {
             this._client = _client;
             this._trainer = _trainer;
@@ -41,7 +39,25 @@ namespace XamaAndrTest.Objects
             this._estimatedExecutionPlan = _estimatedExecutionPlan;
         }
 
-        public Client Client
+        public Occupation()
+        { 
+        
+        }
+
+        public ObjectId ID
+        {
+            get
+            {
+                return _id;
+            }
+
+            set
+            {
+                _id = value;
+            }
+        }
+        
+        public ObjectId Client
         {
             get
             {
@@ -54,7 +70,7 @@ namespace XamaAndrTest.Objects
             }
         }
 
-        public Trainer Trainer
+        public ObjectId Trainer
         {
             get
             {
@@ -132,7 +148,7 @@ namespace XamaAndrTest.Objects
             }
         }
 
-        public List<OccupationExercise> Exercises
+        public List<ObjectId> Exercises
         {
             get
             {
@@ -184,9 +200,49 @@ namespace XamaAndrTest.Objects
             }
         }
 
-        public void AddExercise(OccupationExercise exercise)
+
+        public static explicit operator Occupation(BsonDocument occupation)
         {
-            _exercises.Add(exercise);
+            Occupation result = new Occupation();
+            result.ID = occupation["_id"].AsObjectId;
+            result.Client = occupation["client"].AsObjectId;
+            result.Trainer = occupation["trainer"].AsObjectId;
+            result.Date = occupation["date_time"].ToUniversalTime();
+            result.OccupationStart = new TimeSpan();
+            result.OccupationEnd = new TimeSpan();
+            result.Status = occupation["status"].AsString;
+            result.Purpose = occupation["purpose"].AsString;
+          //  result.Exercises = new List<ObjectId>();
+         //  result.Exercises = occupation["exercises"].AsBsonArray;
+
+            List<ObjectId> tmp = new List<ObjectId>();
+            var temp = occupation["exercises"].AsBsonArray;
+            for (int i = 0; i < temp.Count; i++)
+            {
+                tmp.Add(temp[i].AsObjectId);
+            }
+            result.Exercises = tmp;
+            result.Mark = occupation["mark"].AsString;
+            result.CalorificValue = 0;
+            result.EstimatedExecutionPlan = 0;
+            return result;
         }
+
+
+        public static implicit operator string(Occupation occupation)
+        {
+            string result = JsonConvert.SerializeObject(occupation);
+            return result;
+        }
+
+
+        public static implicit operator Occupation(string json)
+        {
+            Occupation result = new Occupation();
+            result = JsonConvert.DeserializeObject<Occupation>(json);
+            return result;
+        }
+
+
     }
 }
